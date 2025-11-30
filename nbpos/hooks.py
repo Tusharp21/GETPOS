@@ -1,4 +1,7 @@
 from . import __version__ as app_version
+from frappe.core.doctype.user.user import User
+from nbpos.overrides.verification import custom_send_login_mail
+User.send_login_mail=custom_send_login_mail
 
 app_name = "nbpos"
 app_title = "NBPOS"
